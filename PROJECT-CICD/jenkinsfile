@@ -18,7 +18,7 @@ pipeline {
         sh 'cd PROJECT-CICD/spring-boot-app && mvn clean package'
       }
     }
-    /*stage('Static Code Analysis') {
+    stage('Static Code Analysis') {
       environment {
         SONAR_URL = "https://reimagined-space-invention.mvMadhan.githubpreview.dev:9000"
       }
@@ -27,7 +27,7 @@ pipeline {
           sh 'cd PROJECT-CICD/spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
       }
-    }*/
+    }
     stage('Build Docker Image') {
         environment {
         DOCKER_IMAGE = "mvmadhan/java-cicd:${BUILD_NUMBER}"
