@@ -18,7 +18,7 @@ pipeline {
         sh 'cd PROJECT-CICD/spring-boot-app && mvn clean package'
       }
     }
-    stage('Static Code Analysis') {
+   /* stage('Static Code Analysis') {
       environment {
         SONAR_URL = "https://reimagined-space-invention-w6w56555g6p2vg9j-9000.app.github.dev"
       }
@@ -27,7 +27,7 @@ pipeline {
           sh 'cd PROJECT-CICD/spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
       }
-    }
+    }*/
     stage('Build Docker Image') {
         environment {
         DOCKER_IMAGE = "mvmadhan/java-cicd:${BUILD_NUMBER}"
@@ -43,10 +43,10 @@ pipeline {
         }
       }
     }
- /* stage('Update Deployment File') {
+  stage('Update Deployment File') {
   environment {
     GIT_REPO_NAME = "PROJECT-CICD"
-    GIT_USER_NAME = "Shivakumarmv"
+    GIT_USER_NAME = "mvMadhan"
   }
   steps {
     withCredentials([string(credentialsId: 'github-cred', variable: 'GITHUB_TOKEN')]) {
@@ -62,6 +62,6 @@ pipeline {
       '''
     }
   }
-}*/
+}
   }
 }
