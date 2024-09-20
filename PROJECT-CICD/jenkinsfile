@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "https://reimagined-space-invention.mvMadhan.githubpreview.dev:9000"
+        SONAR_URL = "https://reimagined-space-invention-w6w56555g6p2vg9j-9000.app.github.dev"
       }
       steps {
         withCredentials([string(credentialsId: 'sonar-cred', variable: 'SONAR_AUTH_TOKEN')]) {
