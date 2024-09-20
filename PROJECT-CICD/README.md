@@ -3,16 +3,6 @@
 ![Screenshot 2023-03-28 at 9 38 09 PM](https://user-images.githubusercontent.com/43399466/228301952-abc02ca2-9942-4a67-8293-f76647b6f9d8.png)
 
 
-sonarqube installation:
-
-apt install unzip
-adduser sonarqube
-wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
-unzip *
-chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
-chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
-cd sonarqube-9.4.0.54424/bin/linux-x86-64/
-./sonar.sh start
 
 Here are the step-by-step details to set up an end-to-end Jenkins pipeline for a Java application using SonarQube, Argo CD, Helm, and Kubernetes:
 
@@ -25,6 +15,7 @@ Prerequisites:
    -  Argo CD
  
 Steps:
+
 
     1. Install the necessary Jenkins plugins:
        1.1 Git plugin
@@ -70,6 +61,18 @@ Steps:
        7.1 Trigger the Jenkins pipeline to start the CI/CD process for the Java application.
        7.2 Monitor the pipeline stages and fix any issues that arise.
 
-       
+         --*--
+
+      
+       sonarqube installation:
+      
+         apt install unzip
+         adduser sonarqube
+         wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+         unzip *
+         chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
+         chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
+         cd sonarqube-9.4.0.54424/bin/linux-x86-64/
+         ./sonar.sh start
 
 This end-to-end Jenkins pipeline will automate the entire CI/CD process for a Java application, from code checkout to production deployment, using popular tools like SonarQube, Argo CD, Helm, and Kubernetes.
