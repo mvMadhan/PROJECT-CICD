@@ -10,5 +10,8 @@ steps:
 - script: |
     echo "Agent name: $(agent.name)"
     echo "System info:"
-    systeminfo
-  displayName: 'Show agent details'
+    echo "OS: $(uname -a)"
+    echo "CPU: $(lscpu | grep 'Model name')"
+    echo "Memory: $(free -h)"
+    echo "Disk: $(df -h)"
+  displayName: 'Show Linux agent details'
