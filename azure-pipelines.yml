@@ -1,0 +1,14 @@
+trigger: none
+
+pool:
+  name: linuxagents  # Replace with your self-hosted agent pool
+
+steps:
+- script: echo "Hello from self-hosted agent!"
+  displayName: 'Test script'
+  
+- script: |
+    echo "Agent name: $(agent.name)"
+    echo "System info:"
+    systeminfo
+  displayName: 'Show agent details'
